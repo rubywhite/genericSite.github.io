@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Data Display</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Make API call and handle the response
+            $.ajax({
+                url: "http://itunes.apple.com/lookup?id=1569432518",
+                method: "GET",
+                success: function(response) {
+                    // Display the API data on the page
+                    $("#apiData").text(response);
+                },
+                error: function() {
+                    $("#apiData").text("Error occurred while fetching data from the API.");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>API Data Display</h1>
+    <div id="apiData">
+
+        
+    </div>
+</body>
+</html>
